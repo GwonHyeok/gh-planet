@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/app/shared/widget/header.widget.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -27,9 +26,7 @@ class WorkListPage extends StatelessWidget {
                   children: [
                     Text(
                       'WORKS',
-                      style: GoogleFonts.notoSans(
-                        textStyle: Theme.of(context).textTheme.headlineLarge,
-                      ),
+                      style: Theme.of(context).textTheme.headlineLarge,
                     ),
                   ],
                 ),

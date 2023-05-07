@@ -33,16 +33,11 @@ class HomeContactView extends StatelessWidget {
               children: [
                 Text(
                   'Let’s talk',
-                  style: GoogleFonts.notoSans(
-                    textStyle: Theme.of(context).textTheme.headlineLarge,
-                    color: Colors.purple,
-                  ),
+                  style: Theme.of(context).textTheme.headlineLarge,
                 ),
                 Text(
                   'Let’s start your project with us' * 10,
-                  style: GoogleFonts.notoSans(
-                    textStyle: Theme.of(context).textTheme.bodySmall,
-                  ),
+                  style: Theme.of(context).textTheme.bodySmall,
                 ),
                 TextFormField(
                   decoration: const InputDecoration(

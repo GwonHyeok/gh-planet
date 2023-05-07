@@ -2,7 +2,6 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class AppSliverHeader extends StatelessWidget {
   final bool expanded;
@@ -58,23 +57,19 @@ class AppSliverHeader extends StatelessWidget {
                           children: [
                             Text(
                               'GH Planet',
-                              style: GoogleFonts.notoSans(
-                                textStyle: Theme.of(context)
-                                    .textTheme
-                                    .headlineMedium
-                                    ?.copyWith(color: Colors.white),
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headlineMedium
+                                  ?.copyWith(color: Colors.white),
                             ),
                             const SizedBox(height: 16),
                             Text(
                               """초기 스타트업 경험
 다양한 작업 경험으로""",
-                              style: GoogleFonts.notoSans(
-                                textStyle: Theme.of(context)
-                                    .textTheme
-                                    .headlineMedium
-                                    ?.copyWith(color: Colors.white),
-                              ),
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headlineMedium
+                                  ?.copyWith(color: Colors.white),
                               textAlign: TextAlign.center,
                             ),
                           ],

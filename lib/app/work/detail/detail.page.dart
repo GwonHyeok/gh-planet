@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:portfolio/app/shared/widget/footer.widget.dart';
 import 'package:portfolio/app/shared/widget/header.widget.dart';
 import 'package:responsive_framework/responsive_framework.dart';
@@ -47,9 +46,7 @@ class WorkDetailPage extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 64.0),
               child: Text(
                 'Uber Mobile App',
-                style: GoogleFonts.notoSans(
-                  textStyle: Theme.of(context).textTheme.headlineLarge,
-                ),
+                style: Theme.of(context).textTheme.headlineLarge,
               ),
             ),
             Padding(
@@ -114,20 +111,14 @@ class WorkDetailPage extends StatelessWidget {
                   rowFlex: 1,
                   child: Text(
                     'A wonderful serenity has taken to the possession of my entire soul network infrastructure, including consolidation of established network designed and created infrastructure. Voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
-                    style: GoogleFonts.notoSans(
-                      textStyle: Theme.of(context).textTheme.bodyLarge,
-                      color: Colors.white,
-                    ),
+                    style: Theme.of(context).textTheme.bodyLarge,
                   ),
                 ),
                 ResponsiveRowColumnItem(
                   rowFlex: 1,
                   child: Text(
                     'A wonderful serenity has taken to the possession of my entire soul network infrastructure, including consolidation of established network designed and created infrastructure.',
-                    style: GoogleFonts.notoSans(
-                      textStyle: Theme.of(context).textTheme.bodyLarge,
-                      color: Colors.white,
-                    ),
+                    style: Theme.of(context).textTheme.bodyLarge,
                   ),
                 ),
               ],
@@ -179,16 +170,12 @@ class WorkDetailPage extends StatelessWidget {
         children: [
           Text(
             title,
-            style: GoogleFonts.notoSans(
-              textStyle: Theme.of(context).textTheme.labelLarge,
-            ),
+            style: Theme.of(context).textTheme.labelLarge,
           ),
           const SizedBox(height: 8),
           Text(
             body,
-            style: GoogleFonts.notoSans(
-              textStyle: Theme.of(context).textTheme.titleLarge,
-            ),
+            style: Theme.of(context).textTheme.titleLarge,
           ),
         ],
       );
