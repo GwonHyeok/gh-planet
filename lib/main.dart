@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'PORTFOLIO',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepPurple,
       ),
       builder: (context, child) => ResponsiveBreakpoints.builder(
         child: child!,

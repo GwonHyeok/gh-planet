@@ -1,4 +1,7 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppSliverHeader extends StatelessWidget {
@@ -15,12 +18,25 @@ class AppSliverHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverAppBar(
       centerTitle: false,
-      title: const Text('PORTFOLIO'),
+      title: const Text('GH Planet'),
       pinned: true,
       floating: true,
       expandedHeight: expanded ? 640 : null,
       actions: [
-        TextButton(onPressed: () {}, child: const Text('Contact')),
+        TextButton(
+          onPressed: () => context.go('/'),
+          style: TextButton.styleFrom(
+            foregroundColor: Colors.white,
+          ),
+          child: const Text('Home'),
+        ),
+        TextButton(
+          onPressed: () {},
+          style: TextButton.styleFrom(
+            foregroundColor: Colors.white,
+          ),
+          child: const Text('Contact'),
+        ),
       ],
       flexibleSpace: expanded
           ? flexibleSpace ??
@@ -28,36 +44,42 @@ class AppSliverHeader extends StatelessWidget {
                 background: Stack(
                   fit: StackFit.expand,
                   children: [
-                    Image.network(
-                      'https://picsum.photos/800/240?grayscale&blur=6',
+                    Image.asset(
+                      'assets/images/header.jpg',
                       fit: BoxFit.cover,
                     ),
-                    Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          'Hello Everyone',
-                          style: GoogleFonts.notoSans(
-                            textStyle: Theme.of(context)
-                                .textTheme
-                                .headlineMedium
-                                ?.copyWith(color: Colors.white),
-                          ),
+                    ClipRect(
+                      child: BackdropFilter(
+                        filter: ImageFilter.blur(sigmaX: 12, sigmaY: 12),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'GH Planet',
+                              style: GoogleFonts.notoSans(
+                                textStyle: Theme.of(context)
+                                    .textTheme
+                                    .headlineMedium
+                                    ?.copyWith(color: Colors.white),
+                              ),
+                            ),
+                            const SizedBox(height: 16),
+                            Text(
+                              """초기 스타트업 경험
+다양한 작업 경험으로""",
+                              style: GoogleFonts.notoSans(
+                                textStyle: Theme.of(context)
+                                    .textTheme
+                                    .headlineMedium
+                                    ?.copyWith(color: Colors.white),
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ],
                         ),
-                        const SizedBox(height: 16),
-                        Text(
-                          """World class consumer and trends research\ncapabilities we design for tomorrow customers in\ntomorrow’s markets.""",
-                          style: GoogleFonts.notoSans(
-                            textStyle: Theme.of(context)
-                                .textTheme
-                                .headlineLarge
-                                ?.copyWith(color: Colors.white),
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                      ],
+                      ),
                     )
                   ],
                 ),
