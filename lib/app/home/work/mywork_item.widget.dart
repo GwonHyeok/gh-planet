@@ -36,10 +36,22 @@ class _MyWorkItemState extends State<MyWorkItem> {
                 fit: BoxFit.cover,
               ),
             ),
-            const Center(
-              child: FlutterLogo(
-                style: FlutterLogoStyle.stacked,
-                size: 128,
+            AnimatedContainer(
+              duration: const Duration(milliseconds: 200),
+              decoration: BoxDecoration(
+                color: _isHover
+                    ? Colors.black.withOpacity(0.6)
+                    : Colors.black.withOpacity(0.1),
+              ),
+              child: AnimatedOpacity(
+                duration: const Duration(milliseconds: 200),
+                opacity: _isHover ? 1 : 0,
+                child: const Center(
+                  child: FlutterLogo(
+                    style: FlutterLogoStyle.stacked,
+                    size: 128,
+                  ),
+                ),
               ),
             ),
           ],

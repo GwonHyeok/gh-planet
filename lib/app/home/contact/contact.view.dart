@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class HomeContactView extends StatelessWidget {
@@ -32,46 +31,58 @@ class HomeContactView extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  'Let’s talk',
-                  style: Theme.of(context).textTheme.headlineLarge,
-                ),
-                Text(
-                  'Let’s start your project with us' * 10,
-                  style: Theme.of(context).textTheme.bodySmall,
-                ),
-                TextFormField(
-                  decoration: const InputDecoration(
-                    hintText: '이메일',
-                    prefixIcon: Icon(Icons.email_rounded),
-                    border: OutlineInputBorder(),
-                  ),
+                  '문의하기',
+                  style: Theme.of(context).textTheme.headlineMedium,
                 ),
                 const SizedBox(height: 8),
+                Text(
+                  '제작하고 싶은 서비스에 대해 문의해주세요.\n자유롭게 입력해주시면 이른 시일 내에 답변드리겠습니다.',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                const SizedBox(height: 24),
                 TextFormField(
                   decoration: const InputDecoration(
-                    hintText: '연락처',
+                    hintText: 'xxxxxx@xxxxx.xxx',
+                    prefixIcon: Icon(Icons.email_rounded),
+                    labelText: '이메일',
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
+                    border: OutlineInputBorder(),
+                  ),
+                  keyboardType: TextInputType.emailAddress,
+                  inputFormatters: const [],
+                  textInputAction: TextInputAction.next,
+                ),
+                const SizedBox(height: 16),
+                TextFormField(
+                  decoration: const InputDecoration(
+                    hintText: 'xxx-xxxx-xxxx',
+                    labelText: '연락처',
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
                     prefixIcon: Icon(Icons.phone_rounded),
                     border: OutlineInputBorder(),
                   ),
+                  keyboardType: TextInputType.phone,
+                  inputFormatters: const [],
+                  textInputAction: TextInputAction.next,
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 16),
                 TextFormField(
                   decoration: const InputDecoration(
-                    hintText: '문의할 내용을 입력해주세요.',
+                    labelText: '문의할 내용을 입력해주세요.',
+                    floatingLabelBehavior: FloatingLabelBehavior.always,
                     border: OutlineInputBorder(),
                   ),
                   minLines: 4,
                   maxLines: 4,
+                  keyboardType: TextInputType.multiline,
                 ),
-                const SizedBox(height: 8),
-                TextButton(
+                const SizedBox(height: 24),
+                ElevatedButton(
                   onPressed: () {},
-                  style: TextButton.styleFrom(
-                    minimumSize: const Size(double.infinity, 64),
-                    foregroundColor: Colors.white,
-                    backgroundColor: Colors.purple,
+                  style: ElevatedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 24),
                   ),
-                  child: const Text('Send Message'),
+                  child: const Text('문의하기'),
                 ),
               ],
             ),
