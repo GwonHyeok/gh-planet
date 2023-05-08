@@ -16,6 +16,7 @@ class HomeMyWorkView extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         GridView.builder(
+          physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: 9,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
