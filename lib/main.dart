@@ -1,12 +1,21 @@
+import 'package:firebase_app_check/firebase_app_check.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:portfolio/app/home/home.page.dart';
 import 'package:portfolio/app/work/detail/detail.page.dart';
 import 'package:portfolio/app/work/list/list.page.dart';
+import 'package:portfolio/firebase_options.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  await FirebaseAppCheck.instance.activate(
+    webRecaptchaSiteKey: '6LfOxe4lAAAAAFPUjAH84sa0iTTUWA6SBWsGOMaq',
+  );
   runApp(const MyApp());
 }
 
